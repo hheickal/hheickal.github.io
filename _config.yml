@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Personal Website of Hasnain Heickal"
+title                    : ""
 title_separator          : "-"
 name                     : &name "Hasnain Heickal"
 description              : &description "personal description"
