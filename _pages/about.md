@@ -8,4 +8,4 @@ redirect_from:
   - /about.html
 ---
 
-I am a MS/PhD student at UMass Amherst. My research interest lies in using artificial intelligence to guide and enhance education paradigms. I have done my undergraduate from University of Dhaka. I have also worked as a faculty member there for eight years. 
+I am a MS/PhD student at UMass Amherst. I am interested to work on artificial intelligence systems to fascilitate and enhance educational outcomes for students. I come from Bangladesh, which is one of the most populous country in the world. Due to lack of resources, students suffer a lot in education. My vision is to build effective technological solutions which would enable students to learn and achieve excellence. 
