@@ -6,7 +6,7 @@ excerpt: 'An abstractive text summarization system using pointer generator netwo
 date: 2021-07-01
 venue: 'Dhaka University Journal of Applied Science and Engineering'
 paperurl: 'https://www.banglajol.info/index.php/DUJASE/article/download/59217/41337'
-citation: 'Barna, Nasid Habib, and Hasnain Heickal. "An Automatic Abstractive Text Summarization System." Dhaka University Journal of Applied Science and Engineering 6.2 (2021): 39-48.'
+citation: 'Barna, Nasid Habib, and Hasnain Heickal. "An Automatic Abstractive Text Summarization System." Dhaka University Journal of Applied Science and Engineering 6, no. 2 (2021): 39-48.'
 ---
 
 ## ABSTRACT
