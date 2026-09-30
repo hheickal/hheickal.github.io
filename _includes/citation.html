@@ -1,0 +1,16 @@
+{% comment %} Citation box + short paper link. Usage: {% include citation.html item=post %} {% endcomment %}
+{% assign item = include.item %}
+{% if item.paperurl %}
+  {% if item.paperurl contains '.pdf' or item.paperurl contains '/pdf/' %}{% assign link_label = 'PDF' %}{% else %}{% assign link_label = 'Paper' %}{% endif %}
+{% endif %}
+{% if item.citation or item.paperurl %}
+<div class="citation">
+  {% if item.citation %}
+  <div class="citation__label">Cite</div>
+  <p class="citation__text">{{ item.citation }}</p>
+  {% endif %}
+  {% if item.paperurl %}
+  <a class="citation__link" href="{{ item.paperurl | strip }}"><i class="fas fa-fw fa-file-alt" aria-hidden="true"></i> {{ link_label }}</a>
+  {% endif %}
+</div>
+{% endif %}

@@ -87,7 +87,7 @@ author:
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?user=oQc7yEAAAAAJ"
-  email            :
+  email            : "hheickal@gmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "hhjami"
+  github           : "hheickal"
   google_plus      :
   keybase          :
   instagram        :
@@ -198,6 +198,8 @@ defaults:
     values:
       layout: single
       author_profile: true
+      avatar: caricature.jpg
+      body_class: blog
       read_time: true
       comments: true
       share: true

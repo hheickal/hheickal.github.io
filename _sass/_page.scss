@@ -399,3 +399,11 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+/* justify body text site-wide */
+.page__content p,
+.page__content li,
+.archive p {
+  text-align: justify;
+  hyphens: auto;
+}

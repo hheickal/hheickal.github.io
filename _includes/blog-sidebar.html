@@ -1,0 +1,29 @@
+{% include base_path %}
+
+<nav class="blog-sidebar" aria-label="Blog navigation">
+  <a href="{{ base_path }}/year-archive/" class="blog-sidebar__avatar">
+    <img src="{{ page.avatar | default: 'caricature.jpg' | prepend: '/images/' | prepend: base_path }}" alt="{{ site.author.name }}">
+  </a>
+
+  <h3 class="blog-sidebar__heading">Topics</h3>
+  <ul class="blog-sidebar__list">
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+      <li><a href="{{ base_path }}/tags/#{{ tag[0] | slugify }}">{{ tag[0] }}</a> <span class="blog-sidebar__count">{{ tag[1].size }}</span></li>
+    {% endfor %}
+  </ul>
+
+  <h3 class="blog-sidebar__heading">All posts</h3>
+  {% assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% assign current_year = page.date | date: '%Y' %}
+  {% for year in years %}
+    <details class="blog-sidebar__year"{% if page.collection == 'posts' and year.name == current_year %} open{% endif %}>
+      <summary>{{ year.name }} <span class="blog-sidebar__count">{{ year.items.size }}</span></summary>
+      <ul class="blog-sidebar__list">
+        {% for post in year.items %}
+          <li{% if post.url == page.url %} class="is-current"{% endif %}><a href="{{ base_path }}{{ post.url }}" title="{{ post.title | strip_newlines | escape }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </details>
+  {% endfor %}
+</nav>
