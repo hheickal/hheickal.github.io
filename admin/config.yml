@@ -56,6 +56,14 @@ collections:
         widget: datetime
         format: YYYY-MM-DD
         time_format: false
+      - name: last_modified_at
+        preview: false
+        label: Last edited
+        widget: datetime
+        format: YYYY-MM-DD
+        time_format: false
+        auto_now: true
+        required: false
       - name: categories
         preview: false
         label: Language

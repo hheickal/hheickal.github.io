@@ -3,6 +3,7 @@ title: অটোমেটেড জাজে সমস্যা সমাধা�
 url_slug: necessity-of-oj
 published: true
 date: 2020-08-11
+last_modified_at: 2021-04-29
 permalink: /posts/2020/08/necessity-of-oj/
 categories:
   - bangla
