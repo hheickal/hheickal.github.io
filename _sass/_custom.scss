@@ -400,6 +400,12 @@ body.blog .masthead__menu ul.masthead__right {
     display: inline-block;
     font-size: 1.25em;
   }
+  .masthead__svg {
+    width: 1.25em;
+    height: 1em;
+    fill: currentColor;
+    vertical-align: -0.125em;
+  }
   /* keep the name for screen readers, hide it visually */
   .masthead__label {
     position: absolute;

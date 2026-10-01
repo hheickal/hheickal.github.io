@@ -2,14 +2,15 @@
 main:
   - title: "Publications"
     url: /publications/
-    icon: fa-file-alt
+    icon: fa-book-open
 
 #  - title: "Talks"
 #    url: /talks/    
 
   - title: "Teaching"
     url: /teaching/
-    icon: fa-chalkboard-teacher
+    # Font Awesome 6 icon (not in the site's FA5 set), inlined from _includes/icons/
+    icon_svg: icons/person-chalkboard.svg
     
 #  - title: "Portfolio"
 #    url: /portfolio/
@@ -17,7 +18,7 @@ main:
     
   - title: "CV"
     url: /cv/
-    icon: fa-id-card
+    icon: fa-address-card
     
 #   - title: "Guide"
 #     url: /markdown/

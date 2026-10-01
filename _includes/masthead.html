@@ -14,7 +14,7 @@
               {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}" title="{{ link.title }}">{% if link.icon %}<i class="fas fa-fw {{ link.icon }} masthead__icon" aria-hidden="true"></i>{% endif %}<span class="masthead__label">{{ link.title }}</span></a></li>
+            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}" title="{{ link.title }}">{% if link.icon_svg %}{% include {{ link.icon_svg }} %}{% elsif link.icon %}<i class="fas fa-fw {{ link.icon }} masthead__icon" aria-hidden="true"></i>{% endif %}<span class="masthead__label">{{ link.title }}</span></a></li>
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden"></ul>
