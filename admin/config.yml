@@ -39,21 +39,25 @@ collections:
     fields:
       - { name: title, label: Title, widget: string }
       - name: url_slug
+        preview: false
         label: URL name
         widget: string
         hint: "Short English name for the URL, e.g. phd-admission-timeline → /posts/2021/02/phd-admission-timeline/"
         pattern: ["^[a-z0-9]+(-[a-z0-9]+)*$", "Use lowercase letters, numbers and hyphens only"]
       - name: published
+        preview: false
         label: Published (visible on the site)
         widget: boolean
         default: false
         hint: "Off = draft. The post is saved to GitHub but not shown on the site."
       - name: date
+        preview: false
         label: Date
         widget: datetime
         format: YYYY-MM-DD
         time_format: false
       - name: categories
+        preview: false
         label: Language
         widget: select
         multiple: true
@@ -62,6 +66,7 @@ collections:
         options: [Bangla, English]
         hint: "To add a language, add it to options in admin/config.yml"
       - name: tags
+        preview: false
         label: Topics
         widget: select
         multiple: true
@@ -69,6 +74,7 @@ collections:
         options: [Competitive Programming, PhD, Education]
         hint: "To add a topic, add it to options in admin/config.yml"
       - name: permalink
+        preview: false
         label: Custom URL (optional)
         widget: string
         required: false
