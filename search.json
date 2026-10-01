@@ -8,7 +8,8 @@ sitemap: false
 [
 {%- for p in site.posts -%}
   {%- assign lang = site.data.blog.languages | where: "id", p.categories[0] | first -%}
-  {"type":"Blog","title":{{ p.title | strip_newlines | jsonify }},"url":{{ p.url | relative_url | jsonify }},"date":{{ p.date | date: "%b %Y" | jsonify }},"meta":{{ lang.name | default: "" | jsonify }},"text":{{ p.content | strip_html | normalize_whitespace | jsonify }}},
+  {%- capture topics -%}{%- for t in p.tags -%}{%- assign info = site.data.blog.topics | where: "id", t | first -%}{{ info.name }} {{ info.short }} {% endfor -%}{%- endcapture -%}
+  {"type":"Blog","title":{{ p.title | strip_newlines | jsonify }},"url":{{ p.url | relative_url | jsonify }},"date":{{ p.date | date: "%b %Y" | jsonify }},"meta":{{ lang.name | default: "" | append: " · " | append: topics | strip | jsonify }},"text":{{ p.content | strip_html | normalize_whitespace | jsonify }}},
 {%- endfor -%}
 {%- for p in pubs -%}
   {%- capture topics -%}{%- for t in p.tags -%}{%- assign info = site.data.publications.topics | where: "id", t | first -%}{{ info.name }} {% endfor -%}{%- endcapture -%}

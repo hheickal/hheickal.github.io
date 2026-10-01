@@ -30,7 +30,13 @@
           {% endif %}
         {% endfor %}
       {% endunless %}
-        <li class="masthead__menu-item masthead__search"><a href="{{ base_path }}/search/" title="Search" aria-label="Search"><i class="fas fa-fw fa-search" aria-hidden="true"></i></a></li>
+        <li class="masthead__menu-item masthead__search">
+          <button type="button" class="masthead__search-toggle" aria-label="Search" aria-expanded="false" title="Search"><i class="fas fa-fw fa-search" aria-hidden="true"></i></button>
+          <div class="search-panel" role="search" hidden>
+            <input class="search-input" type="search" placeholder="Search posts, publications, teaching…" aria-label="Search" autocomplete="off">
+            <ul class="search-dropdown" hidden></ul>
+          </div>
+        </li>
       </ul>
     </div>
   </div>

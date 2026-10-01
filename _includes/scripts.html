@@ -36,6 +36,8 @@
   })();
 </script>
 
+<script src="{{ '/assets/js/search.js' | relative_url }}" data-index="{{ '/search.json' | relative_url }}"></script>
+
 {% comment %} Open links to other websites in a new tab. {% endcomment %}
 <script>
   document.querySelectorAll('a[href^="http"]').forEach(function (a) {
