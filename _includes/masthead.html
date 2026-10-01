@@ -6,7 +6,7 @@
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/" title="{{ site.title }}"><i class="fas fa-fw fa-home masthead__icon" aria-hidden="true"></i><span class="masthead__label">{{ site.title }}</span></a></li>
           {% for link in site.data.navigation.main %}
             {% if link.align == 'right' %}{% continue %}{% endif %}
             {% if link.url contains 'http' %}
@@ -14,7 +14,7 @@
               {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}" title="{{ link.title }}">{% if link.icon %}<i class="fas fa-fw {{ link.icon }} masthead__icon" aria-hidden="true"></i>{% endif %}<span class="masthead__label">{{ link.title }}</span></a></li>
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden"></ul>
@@ -23,7 +23,7 @@
       <ul class="masthead__right">
         {% for link in site.data.navigation.main %}
           {% if link.align == 'right' %}
-            <li class="masthead__menu-item"><a href="{{ base_path }}{{ link.url }}">{{ link.title }}</a></li>
+            <li class="masthead__menu-item"><a href="{{ base_path }}{{ link.url }}" title="{{ link.title }}">{% if link.icon %}<i class="fas fa-fw {{ link.icon }} masthead__icon" aria-hidden="true"></i>{% endif %}<span class="masthead__label">{{ link.title }}</span></a></li>
           {% endif %}
         {% endfor %}
       </ul>

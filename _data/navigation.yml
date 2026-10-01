@@ -2,12 +2,14 @@
 main:
   - title: "Publications"
     url: /publications/
+    icon: fa-file-alt
 
 #  - title: "Talks"
 #    url: /talks/    
 
   - title: "Teaching"
-    url: /teaching/    
+    url: /teaching/
+    icon: fa-chalkboard-teacher
     
 #  - title: "Portfolio"
 #    url: /portfolio/
@@ -15,6 +17,7 @@ main:
     
   - title: "CV"
     url: /cv/
+    icon: fa-id-card
     
 #   - title: "Guide"
 #     url: /markdown/
@@ -22,4 +25,5 @@ main:
   # right-aligned, kept apart from the academic links
   - title: "Blog"
     url: /year-archive/
+    icon: fa-pen-nib
     align: right

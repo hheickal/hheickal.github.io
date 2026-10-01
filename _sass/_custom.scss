@@ -390,3 +390,27 @@ body.blog .masthead__menu ul.masthead__right {
 
 /* the theme displays everything inside the sidebar; never show script source */
 .sidebar script { display: none !important; }
+
+/* --- masthead: text on desktop, icons only on phones ----------------------- */
+
+.masthead__icon { display: none; }
+
+@media (max-width: 600px) {
+  .masthead__icon {
+    display: inline-block;
+    font-size: 1.25em;
+  }
+  /* keep the name for screen readers, hide it visually */
+  .masthead__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .masthead__menu-item--lg { padding-right: 0; }
+  .greedy-nav a,
+  .masthead__menu ul.masthead__right a { margin: 0 0.9rem 0 0; }
+  .masthead__menu ul.masthead__right a { margin: 0 0 0 0.9rem; }
+}
