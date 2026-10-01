@@ -290,3 +290,55 @@ body.blog .blog-sidebar {
 @media (max-width: $large - 1px) {
   .author__urls-wrapper { display: none; }
 }
+
+/* --- blog sidebar on phones: avatar + "Browse posts" toggle --------------- */
+
+.blog-sidebar__browse > summary {
+  display: inline-block;
+  padding: 0.35em 0.9em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $c-text;
+  border: 1px solid $c-border;
+  border-radius: 999px;
+  cursor: pointer;
+  list-style: none;
+}
+.blog-sidebar__browse > summary::-webkit-details-marker { display: none; }
+.blog-sidebar__browse > summary::after { content: " \25BE"; color: $b-muted; }
+.blog-sidebar__browse[open] > summary::after { content: " \25B4"; }
+
+@media (max-width: $large - 1px) {
+  .blog-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75em;
+  }
+  .blog-sidebar__avatar img { width: 44px; margin: 0; }
+  .blog-sidebar__browse { flex: 1 1 auto; margin-top: 0; }
+  .blog-sidebar__browse[open] { flex-basis: 100%; }
+}
+
+@include breakpoint($large) {
+  .blog-sidebar__browse > summary { display: none; }
+}
+
+/* --- CV page: PDF rendered inline with PDF.js ---------------------------- */
+
+.cv-actions {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1.25em;
+}
+.cv-actions__open { font-size: 0.85em; }
+
+.cv-viewer { max-width: 100%; }
+.cv-viewer__page {
+  display: block;
+  margin: 0 0 1.25em;
+  border: 1px solid $b-border;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+.cv-viewer__status { color: $b-muted; }

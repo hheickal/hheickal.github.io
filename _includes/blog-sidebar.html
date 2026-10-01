@@ -5,6 +5,9 @@
     <img src="{{ page.avatar | default: 'caricature.jpg' | prepend: '/images/' | prepend: base_path }}" alt="{{ site.author.name }}">
   </a>
 
+  <details class="blog-sidebar__browse" id="blog-browse">
+  <summary>Browse posts</summary>
+
   <h3 class="blog-sidebar__heading">Topics</h3>
   <ul class="blog-sidebar__list">
     {% assign tags = site.tags | sort %}
@@ -26,4 +29,13 @@
       </ul>
     </details>
   {% endfor %}
+  </details>
 </nav>
+
+{% comment %} Desktop shows the full sidebar; phones get it collapsed behind "Browse posts". {% endcomment %}
+<script>
+  (function () {
+    var d = document.getElementById("blog-browse");
+    if (d && getComputedStyle(d.querySelector("summary")).display === "none") d.open = true;
+  })();
+</script>
