@@ -15,7 +15,7 @@ Personal academic site + blog for Hasnain Heickal. Jekyll (academicpages / Minim
 - Fonts load from Google Fonts in `_includes/head/custom.html`. `main.css` is cache-busted with `?v={{ site.time }}` in `_includes/head.html`.
 - `_data/navigation.yml` — menu items; `icon` (FA5 class) or `icon_svg` (file in `_includes/icons/`); `align: right` = Blog. Phones (≤600px) show icons only.
 - `_includes/masthead.html` — blog pages show only Home + Blog (left); elsewhere Blog sits on the right. A search button is always the rightmost item. Desktop menu shows icon + text; phones icons only.
-- Search: `search.json` (Liquid-built index of published posts incl. language/topic names, publications, teaching, About) + `assets/js/search.js` (loaded from `scripts.html`). The menu's search button opens an input in the bar with a results dropdown (arrows/Enter/Esc, `/` shortcut); all words must match, title hits rank higher; works for Bangla. No separate search page.
+- Search: `search.json` (Liquid-built index of published posts incl. language/topic names, publications, teaching, About) + `assets/js/search.js` (loaded from `scripts.html`). The menu's search button opens an input with a results dropdown (arrows/Enter/Esc, `/` shortcut); all words must match, title hits rank higher; works for Bangla. No separate search page. The panel must never cover menu items: desktop opens it to the left of the right-hand group (Blog + search), phones drop it below the bar.
 - `_includes/author-profile.html` — sidebar; `compact_contacts: true` in front matter → icon row instead of the list. Mobile always shows the icon row. Per-page `avatar:` overrides the photo (blog uses `caricature.jpg`).
 - `_includes/sidebar.html` — `body_class: blog` → `blog-sidebar.html` (topics, languages, collapsible years; "Browse posts" toggle on phones); `sidebar_include:` adds an extra include (Publications uses `pub-topics-sidebar.html`).
 - `_includes/scripts.html` — small scripts: open blog sidebar on desktop, publications topic filter (`#topic=<id>`), external links open in new tab. **Never put `<script>` inside `.sidebar`** — the theme displays it as text.
@@ -35,6 +35,9 @@ Front matter: `title`, `url_slug`, `published` (false = draft, hidden), `date`, 
 Sveltia CMS, config `admin/config.yml`, preview style `admin/preview.css`. Sign in with a fine-grained GitHub token (this repo, Contents RW). Sections: Blog posts, Publications, Teaching, Pages (About, CV PDF), Settings (blog languages & topics, publication topics). `last_modified_at` auto-stamps on save; settings fields hidden from preview.
 
 ## Gotchas learned
+- Menu items are `white-space: nowrap`; anything rendered inside the menu (e.g. the search dropdown) needs `white-space: normal`.
+- Titles use `overflow-wrap: anywhere` — a long unbroken word (e.g. "Programming/Programming") otherwise makes phone pages wider than the screen.
+- `git add` of a path already staged for deletion (`git rm`) fails the whole add, so the commit silently doesn't happen — check `git status` before committing.
 - Liquid can't do nested lookups like `a[b[0]]` — assign to a variable first.
 - `_config.yml` `author.linkedin` must be the handle only (template prepends the URL).
 - Theme `.greedy-nav` collapse script measures `.visible-links`; keep right-aligned items outside `.greedy-nav`.
