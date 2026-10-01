@@ -39,5 +39,5 @@ Sveltia CMS, config `admin/config.yml`, preview style `admin/preview.css`. Sign 
 - Theme `.greedy-nav` collapse script measures `.visible-links`; keep right-aligned items outside `.greedy-nav`.
 
 ## Open ideas (not done)
-- Individual paper pages: no topic chips; sidebar still shows the full contact list.
+- Individual paper pages: sidebar still shows the full contact list (their footer "Topics:" links go to `/publications/#topic=<id>` via `_includes/tag-list.html`).
 - `_drafts/post-draft.md` is template filler (harmless).

@@ -21,7 +21,14 @@
     {% for hash in tag_hashes %}
       {% assign keyValue = hash | split: '#' %}
       {% capture tag_word %}{{ keyValue[1] | strip_newlines }}{% endcapture %}
-      <a href="{{ base_path }}{{ tag_word | slugify | prepend: path_type | prepend: site.tag_archive.path }}" class="page__taxonomy-item" rel="tag">{% assign info = site.data.blog.topics | where: 'id', tag_word | first %}{{ info.name | default: tag_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+      {% if page.collection == 'publications' %}
+        {% comment %} Paper pages: topics link to the filtered Publications list. {% endcomment %}
+        {% assign info = site.data.publications.topics | where: 'id', tag_word | first %}
+        <a href="{{ base_path }}/publications/#topic={{ tag_word }}" class="page__taxonomy-item" rel="tag">{{ info.name | default: tag_word }}</a>
+      {% else %}
+        {% assign info = site.data.blog.topics | where: 'id', tag_word | first %}
+        <a href="{{ base_path }}{{ tag_word | slugify | prepend: path_type | prepend: site.tag_archive.path }}" class="page__taxonomy-item" rel="tag">{{ info.name | default: tag_word }}</a>
+      {% endif %}{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
     {% endfor %}
     </span>
   </p>
