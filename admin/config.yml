@@ -105,9 +105,9 @@ collections:
             fields:
               - name: id
                 label: ID (permanent)
-                widget: string
-                hint: "Stored in posts. Lowercase, e.g. bangla. Don't change once posts use it — rename with Language instead."
-                pattern: ["^[a-z0-9]+(-[a-z0-9]+)*$", "Use lowercase letters, numbers and hyphens only"]
+                widget: uuid
+                use_b32_encoding: true
+                hint: "Generated automatically and locked. Posts store this; rename with Language below."
               - { name: name, label: Language, widget: string }
           - name: topics
             label: Topics
@@ -117,8 +117,8 @@ collections:
             fields:
               - name: id
                 label: ID (permanent)
-                widget: string
-                hint: "Stored in posts and used in the topic URL. Lowercase, e.g. higher-studies. Don't change once posts use it."
-                pattern: ["^[a-z0-9]+(-[a-z0-9]+)*$", "Use lowercase letters, numbers and hyphens only"]
+                widget: uuid
+                use_b32_encoding: true
+                hint: "Generated automatically and locked. Posts store this and the topic URL uses it."
               - { name: name, label: Topic, widget: string }
               - { name: short, label: Short label in sidebar (optional), widget: string, required: false }
