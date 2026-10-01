@@ -12,7 +12,16 @@
   <ul class="blog-sidebar__list">
     {% assign tags = site.tags | sort %}
     {% for tag in tags %}
-      <li><a href="{{ base_path }}/tags/#{{ tag[0] | slugify }}">{{ tag[0] }}</a> <span class="blog-sidebar__count">{{ tag[1].size }}</span></li>
+      {% assign topic = tag[0] %}{% assign label = site.data.topics.short[topic] | default: topic %}
+      <li><a href="{{ base_path }}/tags/#{{ topic | slugify }}" title="{{ topic }}">{{ label }}</a> <span class="blog-sidebar__count">{{ tag[1].size }}</span></li>
+    {% endfor %}
+  </ul>
+
+  <h3 class="blog-sidebar__heading">Language</h3>
+  <ul class="blog-sidebar__list">
+    {% assign languages = site.categories | sort %}
+    {% for language in languages %}
+      <li><a href="{{ base_path }}/languages/#{{ language[0] | slugify }}">{{ language[0] }}</a> <span class="blog-sidebar__count">{{ language[1].size }}</span></li>
     {% endfor %}
   </ul>
 

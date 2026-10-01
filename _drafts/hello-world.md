@@ -2,7 +2,7 @@
 title: প্রথম ব্লগ পোস্ট
 date: 2014-03-03
 permalink: /posts/2014/03/hello-world/
-tags:
+categories:
   - Bangla
 ---
 

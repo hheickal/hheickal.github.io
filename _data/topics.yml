@@ -1,0 +1,4 @@
+# Short labels for long topic tags in the blog sidebar.
+# The full tag name is still used on the topic page and in the URL.
+short:
+  Competitive Programming: CP
