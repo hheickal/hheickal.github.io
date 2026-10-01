@@ -266,3 +266,27 @@ body.blog .blog-sidebar {
 .citation__link:hover { color: #fff; background: darken($b-accent, 10%); text-decoration: none; }
 .archive .citation__link,
 .page__content .citation__link { text-decoration: none; }
+
+/* --- mobile: contact icons under the name instead of the "Follow" dropdown */
+
+.author__icons {
+  display: flex;
+  gap: 0.35em;
+  margin: 0.3em 0 0 -0.4em;
+  padding: 0;
+  list-style: none;
+  font-size: 1.5em;
+
+  /* ~40px tap targets */
+  a { display: inline-block; padding: 0.15em 0.25em; }
+
+  a,
+  a:visited { color: $b-muted; }
+  a:hover   { color: $b-accent; text-decoration: none; }
+
+  @include breakpoint($large) { display: none; }
+}
+
+@media (max-width: $large - 1px) {
+  .author__urls-wrapper { display: none; }
+}
