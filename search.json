@@ -1,0 +1,21 @@
+---
+layout: null
+sitemap: false
+---
+{% comment %} Search index for /search/. Built with the site, so new posts and papers are included automatically. {% endcomment %}
+{%- assign pubs = site.publications | where_exp: "p", "p.published != false" -%}
+{%- assign about = site.pages | where: "url", "/" | first -%}
+[
+{%- for p in site.posts -%}
+  {%- assign lang = site.data.blog.languages | where: "id", p.categories[0] | first -%}
+  {"type":"Blog","title":{{ p.title | strip_newlines | jsonify }},"url":{{ p.url | relative_url | jsonify }},"date":{{ p.date | date: "%b %Y" | jsonify }},"meta":{{ lang.name | default: "" | jsonify }},"text":{{ p.content | strip_html | normalize_whitespace | jsonify }}},
+{%- endfor -%}
+{%- for p in pubs -%}
+  {%- capture topics -%}{%- for t in p.tags -%}{%- assign info = site.data.publications.topics | where: "id", t | first -%}{{ info.name }} {% endfor -%}{%- endcapture -%}
+  {"type":"Publication","title":{{ p.title | jsonify }},"url":{{ p.url | relative_url | jsonify }},"date":{{ p.date | date: "%Y" | jsonify }},"meta":{{ p.venue | jsonify }},"text":{{ p.citation | append: " " | append: p.excerpt | append: " " | append: topics | append: " " | append: p.content | strip_html | normalize_whitespace | jsonify }}},
+{%- endfor -%}
+{%- for p in site.teaching -%}
+  {"type":"Teaching","title":{{ p.title | jsonify }},"url":{{ p.url | relative_url | jsonify }},"date":{{ p.date | date: "%Y" | jsonify }},"meta":{{ p.venue | jsonify }},"text":{{ p.content | strip_html | normalize_whitespace | jsonify }}},
+{%- endfor -%}
+  {"type":"Page","title":"About me","url":{{ "/" | relative_url | jsonify }},"date":"","meta":"","text":{{ about.content | strip_html | normalize_whitespace | jsonify }}}
+]

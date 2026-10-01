@@ -47,9 +47,6 @@ h1, h2, h3, h4, h5, h6,
   h2 { border-bottom-color: $b-border; }
 }
 
-/* blog keeps a narrow, book-like column; the main site uses the full width */
-body.blog .page__content,
-body.blog .archive > * { max-width: 40em; }
 
 a,
 a:visited { color: $b-accent; text-decoration: none; }
@@ -116,7 +113,6 @@ body.blog {
   }
 
   .page__content {
-    max-width: 40em;
     font-size: 1.05em;
     line-height: 1.8;
 
@@ -483,8 +479,51 @@ body.blog .masthead__menu ul.masthead__right {
   text-underline-offset: 0.18em;
 }
 
-/* main site: drop the theme's empty right gutter (reserved for a table of
-   contents) so text runs to the same right edge as the "Blog" menu link */
+/* drop the theme's empty right gutter (reserved for a table of contents) so
+   text runs to the same right edge as the menu */
 @include breakpoint($large) {
-  body:not(.blog) .page { padding-right: 0; }
+  .page { padding-right: 0; }
 }
+
+/* --- search ----------------------------------------------------------------- */
+
+.masthead__search a { color: $b-muted !important; }
+.masthead__search a:hover { color: $b-accent !important; }
+.masthead__menu ul.masthead__right .masthead__search a { margin-left: 1.1rem; }
+
+input.search-input[type="search"] {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.6em 0.9em;
+  font: inherit;
+  font-size: 1.05em;
+  border: 1px solid $b-border;
+  border-radius: 8px;
+  outline: none;
+}
+.search-input:focus { border-color: $b-accent; box-shadow: 0 0 0 3px rgba($b-accent, 0.15); }
+.search-status { margin: 0.75em 0; font-size: 0.85em; color: $b-muted; }
+
+.search-results { margin: 0; padding: 0; list-style: none; }
+.page__content .search-result {
+  text-align: left;
+  margin: 0 0 1.4em;
+  padding-bottom: 1.2em;
+  border-bottom: 1px solid $b-border;
+}
+.search-result__meta { font-size: 0.75em; color: $b-muted; }
+.search-result__type {
+  display: inline-block;
+  margin-right: 0.6em;
+  padding: 0.05em 0.55em;
+  font-weight: 600;
+  border-radius: 999px;
+  color: $b-accent;
+  background: rgba($b-accent, 0.08);
+}
+.search-result__type--blog { color: $c-accent; background: rgba($c-accent, 0.08); }
+.page__content a.search-result__title { display: block; margin: 0.25em 0; font-size: 1.15em; font-weight: 700; text-decoration: none; }
+.page__content a.search-result__title:hover { text-decoration: underline; }
+.page__content .search-result__snippet { margin: 0; font-size: 0.9em; text-align: left; color: $b-text; }
+.search-result mark { padding: 0 0.1em; background: #fff3a3; color: inherit; border-radius: 2px; }

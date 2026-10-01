@@ -22,15 +22,16 @@
         <ul class="hidden-links hidden"></ul>
       </nav>
       {% comment %} Outside .greedy-nav so the collapse script never measures or moves these. {% endcomment %}
-      {% unless page.body_class == 'blog' %}
       <ul class="masthead__right">
+      {% unless page.body_class == 'blog' %}
         {% for link in site.data.navigation.main %}
           {% if link.align == 'right' %}
             <li class="masthead__menu-item"><a href="{{ base_path }}{{ link.url }}" title="{{ link.title }}">{% if link.icon %}<i class="fas fa-fw {{ link.icon }} masthead__icon" aria-hidden="true"></i>{% endif %}<span class="masthead__label">{{ link.title }}</span></a></li>
           {% endif %}
         {% endfor %}
-      </ul>
       {% endunless %}
+        <li class="masthead__menu-item masthead__search"><a href="{{ base_path }}/search/" title="Search" aria-label="Search"><i class="fas fa-fw fa-search" aria-hidden="true"></i></a></li>
+      </ul>
     </div>
   </div>
 </div>
