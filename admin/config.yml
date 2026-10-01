@@ -52,10 +52,11 @@ collections:
         hint: "Off = draft. The post is saved to GitHub but not shown on the site."
       - name: date
         preview: false
-        label: Date
+        label: Publish date
         widget: datetime
         format: YYYY-MM-DD
         time_format: false
+        hint: "Set automatically to the day you first publish (a minute after saving). Later unpublish/republish keeps it."
       - name: last_modified_at
         preview: false
         label: Last edited
@@ -94,7 +95,7 @@ collections:
         label: Custom URL (optional)
         widget: string
         required: false
-        hint: "Leave empty for the default /posts/YYYY/MM/url-name/"
+        hint: "Filled in automatically on first publish, which locks the post's address. Leave as is."
       - { name: body, label: Post, widget: markdown }
 
   - name: settings
