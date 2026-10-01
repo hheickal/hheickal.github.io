@@ -59,20 +59,28 @@ collections:
       - name: categories
         preview: false
         label: Language
-        widget: select
+        widget: relation
+        collection: settings
+        file: blog
+        value_field: "{{languages.*.name}}"
+        display_fields: ["{{languages.*.name}}"]
+        search_fields: ["{{languages.*.name}}"]
         multiple: true
         min: 1
         max: 1
-        options: [Bangla, English]
-        hint: "To add a language, add it to options in admin/config.yml"
+        hint: "Add languages under Blog settings"
       - name: tags
         preview: false
         label: Topics
-        widget: select
+        widget: relation
+        collection: settings
+        file: blog
+        value_field: "{{topics.*.name}}"
+        display_fields: ["{{topics.*.name}}"]
+        search_fields: ["{{topics.*.name}}"]
         multiple: true
         required: false
-        options: [Competitive Programming, PhD, Education]
-        hint: "To add a topic, add it to options in admin/config.yml"
+        hint: "Add topics under Blog settings"
       - name: permalink
         preview: false
         label: Custom URL (optional)
@@ -80,3 +88,27 @@ collections:
         required: false
         hint: "Leave empty for the default /posts/YYYY/MM/url-name/"
       - { name: body, label: Post, widget: markdown }
+
+  - name: settings
+    label: Blog settings
+    editor:
+      preview: false
+    files:
+      - name: blog
+        label: Languages & topics
+        file: _data/blog.yml
+        fields:
+          - name: languages
+            label: Languages
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Language, widget: string }
+          - name: topics
+            label: Topics
+            widget: list
+            summary: "{{fields.name}}"
+            hint: "Renaming a topic does not update existing posts — retag them too."
+            fields:
+              - { name: name, label: Topic, widget: string }
+              - { name: short, label: Short label in sidebar (optional), widget: string, required: false }

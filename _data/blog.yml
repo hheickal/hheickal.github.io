@@ -1,0 +1,11 @@
+# Blog languages and topics. Edited from the online editor (Blog settings)
+# or by hand. Post front matter uses these names: categories = language,
+# tags = topics. "short" is an optional label for the blog sidebar.
+languages:
+  - name: Bangla
+  - name: English
+topics:
+  - name: Competitive Programming
+    short: CP
+  - name: PhD
+  - name: Education

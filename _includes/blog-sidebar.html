@@ -12,7 +12,7 @@
   <ul class="blog-sidebar__list">
     {% assign tags = site.tags | sort %}
     {% for tag in tags %}
-      {% assign topic = tag[0] %}{% assign label = site.data.topics.short[topic] | default: topic %}
+      {% assign topic = tag[0] %}{% assign topic_info = site.data.blog.topics | where: 'name', topic | first %}{% assign label = topic_info.short | default: topic %}
       <li><a href="{{ base_path }}/tags/#{{ topic | slugify }}" title="{{ topic }}">{{ label }}</a> <span class="blog-sidebar__count">{{ tag[1].size }}</span></li>
     {% endfor %}
   </ul>
