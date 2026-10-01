@@ -11,8 +11,8 @@ redirect_from:
 {% assign cv_pdf = base_path | append: "/files/HH_CV.pdf" %}
 
 <p class="cv-actions">
-  <a class="citation__link" href="{{ cv_pdf }}" download><i class="fas fa-fw fa-download" aria-hidden="true"></i> Download PDF</a>
-  <a class="cv-actions__open" href="{{ cv_pdf }}" target="_blank" rel="noopener">Open in new tab</a>
+  <a class="cv-actions__icon" href="{{ cv_pdf }}" download title="Download PDF" aria-label="Download PDF"><i class="fas fa-fw fa-download" aria-hidden="true"></i></a>
+  <a class="cv-actions__icon" href="{{ cv_pdf }}" target="_blank" rel="noopener" title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-fw fa-external-link-alt" aria-hidden="true"></i></a>
 </p>
 
 <div id="cv-viewer" class="cv-viewer" data-src="{{ cv_pdf }}">

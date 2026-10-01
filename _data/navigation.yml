@@ -12,11 +12,14 @@ main:
 #  - title: "Portfolio"
 #    url: /portfolio/
         
-  - title: "Blog"
-    url: /year-archive/
     
   - title: "CV"
     url: /cv/
     
 #   - title: "Guide"
 #     url: /markdown/
+
+  # right-aligned, kept apart from the academic links
+  - title: "Blog"
+    url: /year-archive/
+    align: right
