@@ -1,6 +1,8 @@
 ---
 title: >-
   Dream Education System (স্বপ্নের শিক্ষাপদ্ধতি) 
+url_slug: education-system
+published: false
 date: 2021-06-22
 permalink: /posts/2021/06/education-system/
 categories:

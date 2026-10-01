@@ -1,0 +1,76 @@
+# Sveltia CMS configuration — https://sveltiacms.app/en/docs
+# Sign in at https://hheickal.github.io/admin/ with "Sign In with Token"
+# (fine-grained GitHub token, this repo only, Contents: read and write).
+
+backend:
+  name: github
+  repo: hheickal/hheickal.github.io
+  branch: master
+  commit_messages:
+    create: "Blog: add {{slug}}"
+    update: "Blog: update {{slug}}"
+    delete: "Blog: delete {{slug}}"
+    uploadMedia: "Blog: upload {{path}}"
+    deleteMedia: "Blog: delete {{path}}"
+
+site_url: https://hheickal.github.io
+display_url: https://hheickal.github.io
+
+media_folder: images/posts
+public_folder: /images/posts
+
+collections:
+  - name: posts
+    label: Blog posts
+    label_singular: Blog post
+    folder: _posts
+    create: true
+    # File name Jekyll expects: YYYY-MM-DD-slug.md; the URL becomes /posts/YYYY/MM/slug/
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.url_slug}}"
+    summary: "{{title}} · {{date}}"
+    sortable_fields: [date, title]
+    view_filters:
+      - label: Published
+        field: published
+        pattern: true
+      - label: Drafts
+        field: published
+        pattern: false
+    fields:
+      - { name: title, label: Title, widget: string }
+      - name: url_slug
+        label: URL name
+        widget: string
+        hint: "Short English name for the URL, e.g. phd-admission-timeline → /posts/2021/02/phd-admission-timeline/"
+        pattern: ["^[a-z0-9]+(-[a-z0-9]+)*$", "Use lowercase letters, numbers and hyphens only"]
+      - name: published
+        label: Published (visible on the site)
+        widget: boolean
+        default: false
+        hint: "Off = draft. The post is saved to GitHub but not shown on the site."
+      - name: date
+        label: Date
+        widget: datetime
+        format: YYYY-MM-DD
+        time_format: false
+      - name: categories
+        label: Language
+        widget: select
+        multiple: true
+        min: 1
+        max: 1
+        options: [Bangla, English]
+        hint: "To add a language, add it to options in admin/config.yml"
+      - name: tags
+        label: Topics
+        widget: select
+        multiple: true
+        required: false
+        options: [Competitive Programming, PhD, Education]
+        hint: "To add a topic, add it to options in admin/config.yml"
+      - name: permalink
+        label: Custom URL (optional)
+        widget: string
+        required: false
+        hint: "Leave empty for the default /posts/YYYY/MM/url-name/"
+      - { name: body, label: Post, widget: markdown }

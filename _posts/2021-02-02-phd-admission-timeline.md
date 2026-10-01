@@ -1,5 +1,7 @@
 ---
 title: পিএইচডি আবেদনের ঘটনাধারা
+url_slug: phd-admission-timeline
+published: true
 date: 2021-02-02
 permalink: /posts/2021/02/phd-admission-timeline/
 categories:

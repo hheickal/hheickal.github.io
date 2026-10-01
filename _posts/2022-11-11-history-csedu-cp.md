@@ -1,6 +1,8 @@
 ---
 title: >-
   Some Stats of Competitive Programming in CSEDU
+url_slug: history-csedu-cp
+published: true
 date: 2022-11-11
 permalink: /posts/2022/11/history-csedu-cp/
 categories:

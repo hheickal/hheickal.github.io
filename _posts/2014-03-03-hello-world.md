@@ -1,5 +1,7 @@
 ---
 title: প্রথম ব্লগ পোস্ট
+url_slug: hello-world
+published: false
 date: 2014-03-03
 permalink: /posts/2014/03/hello-world/
 categories:

@@ -1,6 +1,8 @@
 ---
 title: >-
   রাজনীতি ও শিক্ষকতা, এবং সরকার
+url_slug: teachers-politics
+published: false
 date: 2021-02-05
 permalink: /posts/2021/02/teachers-politics/
 categories:

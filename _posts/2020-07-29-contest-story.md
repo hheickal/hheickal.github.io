@@ -1,6 +1,8 @@
 ---
 title: >-
   প্রোগ্রামিং কন্টেস্ট শুরু করার গল্প
+url_slug: contest-story
+published: false
 date: 2020-07-29
 permalink: /posts/2020/07/contest-story/
 categories:

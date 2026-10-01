@@ -1,5 +1,7 @@
 ---
 title: অটোমেটেড জাজে সমস্যা সমাধান করার প্রয়োজনীতা
+url_slug: necessity-of-oj
+published: true
 date: 2020-08-11
 permalink: /posts/2020/08/necessity-of-oj/
 categories:
