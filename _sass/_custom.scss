@@ -473,3 +473,12 @@ body.blog .masthead__menu ul.masthead__right {
     .author__icons { justify-content: center; margin-left: 0; }
   }
 }
+
+/* your own name in citations */
+.citation__me {
+  font-weight: 700;
+  color: $b-text;
+  text-decoration: underline;
+  text-decoration-color: rgba($b-accent, 0.45);
+  text-underline-offset: 0.18em;
+}
