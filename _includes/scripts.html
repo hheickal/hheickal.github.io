@@ -1,5 +1,13 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
+{% comment %} Blog sidebar: open the "Browse posts" panel on desktop, where its toggle is hidden. {% endcomment %}
+<script>
+  (function () {
+    var d = document.getElementById("blog-browse");
+    if (d && getComputedStyle(d.querySelector("summary")).display === "none") d.open = true;
+  })();
+</script>
+
 {% comment %} Open links to other websites in a new tab. {% endcomment %}
 <script>
   document.querySelectorAll('a[href^="http"]').forEach(function (a) {

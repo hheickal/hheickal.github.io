@@ -387,3 +387,6 @@ body.blog .masthead__menu ul.masthead__right {
 
 .archive > .cv-actions,
 .archive > .cv-viewer { max-width: none; }
+
+/* the theme displays everything inside the sidebar; never show script source */
+.sidebar script { display: none !important; }

@@ -31,11 +31,3 @@
   {% endfor %}
   </details>
 </nav>
-
-{% comment %} Desktop shows the full sidebar; phones get it collapsed behind "Browse posts". {% endcomment %}
-<script>
-  (function () {
-    var d = document.getElementById("blog-browse");
-    if (d && getComputedStyle(d.querySelector("summary")).display === "none") d.open = true;
-  })();
-</script>
