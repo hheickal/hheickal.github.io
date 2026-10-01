@@ -62,7 +62,7 @@ collections:
         widget: relation
         collection: settings
         file: blog
-        value_field: "{{languages.*.name}}"
+        value_field: "{{languages.*.id}}"
         display_fields: ["{{languages.*.name}}"]
         search_fields: ["{{languages.*.name}}"]
         multiple: true
@@ -75,7 +75,7 @@ collections:
         widget: relation
         collection: settings
         file: blog
-        value_field: "{{topics.*.name}}"
+        value_field: "{{topics.*.id}}"
         display_fields: ["{{topics.*.name}}"]
         search_fields: ["{{topics.*.name}}"]
         multiple: true
@@ -103,12 +103,22 @@ collections:
             widget: list
             summary: "{{fields.name}}"
             fields:
+              - name: id
+                label: ID (permanent)
+                widget: string
+                hint: "Stored in posts. Lowercase, e.g. bangla. Don't change once posts use it — rename with Language instead."
+                pattern: ["^[a-z0-9]+(-[a-z0-9]+)*$", "Use lowercase letters, numbers and hyphens only"]
               - { name: name, label: Language, widget: string }
           - name: topics
             label: Topics
             widget: list
             summary: "{{fields.name}}"
-            hint: "Renaming a topic does not update existing posts — retag them too."
+            hint: "Rename a topic freely via Topic / Short label; posts follow automatically."
             fields:
+              - name: id
+                label: ID (permanent)
+                widget: string
+                hint: "Stored in posts and used in the topic URL. Lowercase, e.g. higher-studies. Don't change once posts use it."
+                pattern: ["^[a-z0-9]+(-[a-z0-9]+)*$", "Use lowercase letters, numbers and hyphens only"]
               - { name: name, label: Topic, widget: string }
               - { name: short, label: Short label in sidebar (optional), widget: string, required: false }

@@ -5,7 +5,7 @@ published: false
 date: 2014-03-03
 permalink: /posts/2014/03/hello-world/
 categories:
-  - Bangla
+  - bangla
 ---
 
 গিটহাব দিয়ে এটাই আমার প্রথম ব্লগ পোস্ট। টেস্ট করে দেখছি কেমন আসে। 

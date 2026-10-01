@@ -1,10 +1,19 @@
+# Blog languages and topics, edited from the online editor (Blog settings).
+# Posts store the permanent `id` (categories = language, tags = topics), so
+# `name` and `short` (sidebar label) can be renamed freely. Never change an
+# `id` once posts use it — it is also the topic's URL (/tags/#id).
 languages:
-  - name: Bangla
-  - name: English
+  - id: bangla
+    name: Bangla
+  - id: english
+    name: English
 topics:
-  - name: Competitive Programming
+  - id: competitive-programming
+    name: Competitive Programming
     short: CP
-  - name: Higher Studies
+  - id: higher-studies
+    name: Higher Studies
     short: PhD
-  - name: Education
+  - id: education
+    name: Education
     short: Edu

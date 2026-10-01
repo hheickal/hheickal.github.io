@@ -6,9 +6,9 @@ published: true
 date: 2022-11-11
 permalink: /posts/2022/11/history-csedu-cp/
 categories:
-  - English
+  - english
 tags:
-  - Competitive Programming
+  - competitive-programming
 ---
 1. CSEDU has been the Champion in any National Level Contest for ~~18~~ 22 times. The only university ahead of CSEDU is BUET. No other university has more than 6 championships overall.
 

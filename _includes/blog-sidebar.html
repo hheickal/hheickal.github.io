@@ -12,8 +12,8 @@
   <ul class="blog-sidebar__list">
     {% assign tags = site.tags | sort %}
     {% for tag in tags %}
-      {% assign topic = tag[0] %}{% assign topic_info = site.data.blog.topics | where: 'name', topic | first %}{% assign label = topic_info.short | default: topic %}
-      <li><a href="{{ base_path }}/tags/#{{ topic | slugify }}" title="{{ topic }}">{{ label }}</a> <span class="blog-sidebar__count">{{ tag[1].size }}</span></li>
+      {% assign topic = tag[0] %}{% assign topic_info = site.data.blog.topics | where: 'id', topic | first %}{% assign topic_name = topic_info.name | default: topic %}{% assign label = topic_info.short | default: topic_name %}
+      <li><a href="{{ base_path }}/tags/#{{ topic | slugify }}" title="{{ topic_name }}">{{ label }}</a> <span class="blog-sidebar__count">{{ tag[1].size }}</span></li>
     {% endfor %}
   </ul>
 
@@ -21,7 +21,8 @@
   <ul class="blog-sidebar__list">
     {% assign languages = site.categories | sort %}
     {% for language in languages %}
-      <li><a href="{{ base_path }}/languages/#{{ language[0] | slugify }}">{{ language[0] }}</a> <span class="blog-sidebar__count">{{ language[1].size }}</span></li>
+      {% assign language_info = site.data.blog.languages | where: 'id', language[0] | first %}
+      <li><a href="{{ base_path }}/languages/#{{ language[0] | slugify }}">{{ language_info.name | default: language[0] }}</a> <span class="blog-sidebar__count">{{ language[1].size }}</span></li>
     {% endfor %}
   </ul>
 
