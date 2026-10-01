@@ -8,6 +8,6 @@ collection: teaching
 permalink: ''
 ---
 
-I have worked as a Teaching Associate in CS, UMass Amherst. 
+I have worked as a Teaching Associate in CS, UMass Amherst in Fall, 2025. 
 
 I taught an undergraduate introductory programming course along with 5 other instructors. The course teaches Python to CS and non-CS majors. It had around 50 students. I delivered the lectures and created the labs.
