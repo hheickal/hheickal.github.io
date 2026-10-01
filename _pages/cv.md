@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
-{% assign cv_pdf = base_path | append: "/files/HH_CV.pdf" %}
+{% assign cv_pdf = base_path | append: site.data.cv.pdf %}
 
 <p class="cv-actions">
   <a class="cv-actions__icon" href="{{ cv_pdf }}" download title="Download PDF" aria-label="Download PDF"><i class="fas fa-fw fa-download" aria-hidden="true"></i></a>

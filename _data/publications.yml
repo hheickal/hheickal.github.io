@@ -1,0 +1,19 @@
+# Research topics for publications. Edited from the online editor
+# (Publication settings). Publications store the permanent `id`.
+topics:
+  - id: ai-education
+    name: AI in Education
+  - id: llm
+    name: LLMs
+  - id: nlp-speech
+    name: NLP & Speech
+  - id: computer-vision
+    name: Computer Vision
+  - id: hci
+    name: HCI
+  - id: robotics
+    name: Robotics
+  - id: security
+    name: Security
+  - id: bioinformatics
+    name: Bioinformatics

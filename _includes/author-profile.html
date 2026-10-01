@@ -6,7 +6,7 @@
 
 {% assign avatar = page.avatar | default: author.avatar %}
 
-<div itemscope itemtype="http://schema.org/Person">
+<div itemscope itemtype="http://schema.org/Person"{% if page.compact_contacts %} class="author--compact"{% endif %}>
 
   <div class="author__avatar">
     {% if avatar contains "://" %}

@@ -1,0 +1,15 @@
+{% include base_path %}
+{% assign live_pubs = site.publications | where_exp: "p", "p.published != false" %}
+<nav class="pub-topics-sidebar" aria-label="Publication topics">
+  <h3 class="blog-sidebar__heading">Topics</h3>
+  <ul>
+    <li><a href="{{ base_path }}/publications/" data-topic="">All <span class="blog-sidebar__count">{{ live_pubs.size }}</span></a></li>
+    {% for topic in site.data.publications.topics %}
+      {% assign n = 0 %}
+      {% for p in live_pubs %}{% if p.tags contains topic.id %}{% assign n = n | plus: 1 %}{% endif %}{% endfor %}
+      {% if n > 0 %}
+        <li><a href="{{ base_path }}/publications/#topic={{ topic.id }}" data-topic="{{ topic.id }}">{{ topic.name }} <span class="blog-sidebar__count">{{ n }}</span></a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>

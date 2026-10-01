@@ -8,6 +8,34 @@
   })();
 </script>
 
+{% comment %} Publications: filter the list by topic via #topic=<id>. {% endcomment %}
+<script>
+  (function () {
+    var list = document.getElementById("pub-list");
+    if (!list) return;
+    function apply() {
+      var m = location.hash.match(/topic=([\w-]+)/), topic = m ? m[1] : "";
+      var shown = 0;
+      list.querySelectorAll(".list__item").forEach(function (item) {
+        var ok = !topic || (" " + item.dataset.topics + " ").indexOf(" " + topic + " ") >= 0;
+        item.hidden = !ok;
+        if (ok) shown++;
+      });
+      list.querySelectorAll(".pub-year").forEach(function (h) {
+        var el = h.nextElementSibling, any = false;
+        while (el && !el.classList.contains("pub-year")) { if (el.classList.contains("list__item") && !el.hidden) any = true; el = el.nextElementSibling; }
+        h.hidden = !any;
+      });
+      list.querySelector(".pub-empty").hidden = shown > 0;
+      document.querySelectorAll("[data-topic]").forEach(function (a) {
+        a.classList.toggle("is-active", a.dataset.topic === topic);
+      });
+    }
+    window.addEventListener("hashchange", apply);
+    apply();
+  })();
+</script>
+
 {% comment %} Open links to other websites in a new tab. {% endcomment %}
 <script>
   document.querySelectorAll('a[href^="http"]').forEach(function (a) {

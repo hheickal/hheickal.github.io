@@ -420,3 +420,56 @@ body.blog .masthead__menu ul.masthead__right {
   .masthead__menu ul.masthead__right a { margin: 0 0.9rem 0 0; }
   .masthead__menu ul.masthead__right a { margin: 0 0 0 0.9rem; }
 }
+
+/* --- publications: topics, year headings, compact contacts ---------------- */
+
+.pub-scholar { font-size: 0.85em; color: $b-muted; }
+.pub-year { margin-top: 1.5em; }
+
+.pub-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin: -0.4em 0 0.8em;
+}
+.pub-topic,
+.pub-topic:visited {
+  padding: 0.1em 0.65em;
+  font-size: 0.75em;
+  color: $b-accent;
+  background: rgba($b-accent, 0.07);
+  border-radius: 999px;
+  text-decoration: none;
+}
+.pub-topic:hover { background: rgba($b-accent, 0.15); text-decoration: none; }
+.archive .pub-topics a.pub-topic { text-decoration: none; }
+.pub-topic.is-active { color: #fff; background: $b-accent; }
+
+.pub-topics-sidebar {
+  ul { margin: 0; padding: 0; list-style: none; }
+  li { margin: 0 0 0.35rem; font-size: 0.85rem; }
+  a, a:visited { display: inline-block; padding: 0.1rem 0.5rem; color: $b-text; border-radius: 4px; text-decoration: none; }
+  a:hover { color: $b-accent; }
+  a.is-active { color: #fff; background: $b-accent; }
+  a.is-active .blog-sidebar__count { color: rgba(#fff, 0.8); }
+}
+
+/* phones: topics as a wrapped row of chips under the profile bar */
+@media (max-width: $large - 1px) {
+  .pub-topics-sidebar {
+    margin-top: 0.75em;
+    .blog-sidebar__heading { display: none; }
+    ul { display: flex; flex-wrap: wrap; gap: 0.4em; }
+    li { margin: 0; }
+    a, a:visited { padding: 0.15rem 0.6rem; font-size: 0.8rem; border: 1px solid $b-border; border-radius: 999px; }
+  }
+}
+
+/* compact contacts (e.g. Publications): icon row on every screen size */
+.author--compact {
+  .author__urls-wrapper { display: none !important; }
+  .author__icons { display: flex !important; }
+  @include breakpoint($large) {
+    .author__icons { justify-content: center; margin-left: 0; }
+  }
+}

@@ -77,7 +77,7 @@ collections:
         multiple: true
         min: 1
         max: 1
-        hint: "Add languages under Blog settings"
+        hint: "Add languages under Settings → Blog languages & topics"
       - name: tags
         preview: false
         label: Topics
@@ -89,7 +89,7 @@ collections:
         search_fields: ["{{topics.*.name}}"]
         multiple: true
         required: false
-        hint: "Add topics under Blog settings"
+        hint: "Add topics under Settings → Blog languages & topics"
       - name: permalink
         preview: false
         label: Custom URL (optional)
@@ -98,13 +98,98 @@ collections:
         hint: "Filled in automatically on first publish, which locks the post's address. Leave as is."
       - { name: body, label: Post, widget: markdown }
 
+  - name: publications
+    label: Publications
+    label_singular: Publication
+    folder: _publications
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    summary: "{{title}} · {{date}}"
+    sortable_fields: [date, title]
+    fields:
+      - { name: title, label: Title, widget: string }
+      - name: published
+        preview: false
+        label: Show on the site
+        widget: boolean
+        default: true
+      - name: date
+        preview: false
+        label: Date
+        widget: datetime
+        format: YYYY-MM-DD
+        time_format: false
+        hint: "Publications are listed newest first by this date."
+      - { name: venue, preview: false, label: Venue, widget: string, hint: "e.g. International Conference on Artificial Intelligence in Education" }
+      - { name: paperurl, preview: false, label: Paper link, widget: string, required: false, hint: "Shown as a PDF / Paper button" }
+      - { name: citation, preview: false, label: Citation, widget: text, required: false }
+      - { name: excerpt, preview: false, label: Short summary, widget: text, required: false, hint: "One or two sentences shown in the publication list" }
+      - name: tags
+        preview: false
+        label: Topics
+        widget: relation
+        collection: settings
+        file: publications
+        value_field: "{{topics.*.id}}"
+        display_fields: ["{{topics.*.name}}"]
+        search_fields: ["{{topics.*.name}}"]
+        multiple: true
+        required: false
+        hint: "Add topics under Settings → Publication topics"
+      - { name: collection, widget: hidden, default: publications }
+      - { name: permalink, preview: false, label: Custom URL (optional), widget: string, required: false }
+      - { name: body, label: Abstract / details (optional), widget: markdown, required: false }
+
+  - name: teaching
+    label: Teaching
+    label_singular: Teaching entry
+    folder: _teaching
+    create: true
+    slug: "{{year}}-{{slug}}"
+    summary: "{{title}} · {{date}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: type, preview: false, label: Role, widget: string, hint: "e.g. Assistant Professor, Lecturer" }
+      - { name: venue, preview: false, label: Institution, widget: string }
+      - { name: location, preview: false, label: Location, widget: string, required: false }
+      - { name: date, preview: false, label: Start date, widget: datetime, format: YYYY-MM-DD, time_format: false }
+      - { name: collection, widget: hidden, default: teaching }
+      - { name: permalink, preview: false, label: Custom URL (optional), widget: string, required: false }
+      - { name: body, label: Details, widget: markdown }
+
+  - name: pages
+    label: Pages
+    files:
+      - name: about
+        label: About (home page)
+        file: _pages/about.md
+        fields:
+          - { name: permalink, widget: hidden, default: / }
+          - { name: title, label: Title, widget: string }
+          - { name: excerpt, widget: hidden, default: About me }
+          - { name: author_profile, widget: hidden, default: true }
+          - { name: redirect_from, widget: hidden, default: [/about/, /about.html] }
+          - { name: body, label: Text, widget: markdown }
+      - name: cv
+        label: CV (PDF)
+        file: _data/cv.yml
+        editor:
+          preview: false
+        fields:
+          - name: pdf
+            label: CV file
+            widget: file
+            media_folder: /files
+            public_folder: /files
+            hint: "Upload a new PDF to replace the CV shown on the CV page."
+
   - name: settings
-    label: Blog settings
+    label: Settings
     editor:
       preview: false
     files:
       - name: blog
-        label: Languages & topics
+        label: Blog languages & topics
         file: _data/blog.yml
         fields:
           - name: languages
@@ -131,3 +216,20 @@ collections:
                 hint: "Generated automatically and locked. Posts store this and the topic URL uses it."
               - { name: name, label: Topic, widget: string }
               - { name: short, label: Short label in sidebar (optional), widget: string, required: false }
+
+      - name: publications
+        label: Publication topics
+        file: _data/publications.yml
+        fields:
+          - name: topics
+            label: Topics
+            widget: list
+            summary: "{{fields.name}}"
+            hint: "Rename freely; publications store the ID and follow automatically."
+            fields:
+              - name: id
+                label: ID (permanent)
+                widget: uuid
+                use_b32_encoding: true
+                hint: "Generated automatically and locked."
+              - { name: name, label: Topic, widget: string }
