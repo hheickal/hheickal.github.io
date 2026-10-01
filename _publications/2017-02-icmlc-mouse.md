@@ -11,3 +11,6 @@ published: true
 tags:
   - security
 ---
+
+## ABSTRACT
+The biometric authentication is becoming very familiar due to its unique characteristics. This paper presents a user authentication system using mouse movement data. The mouse movement data are captured using an existing tool named Jitbit macro recorder. The acquired data are preprocessed and sampled into N blocks based on specific number of actions and stored in database. From each block twelve features are generated: Number of Points in the trajectory, Delay Time, Number of Delay, Number of Action, STDEV of Trajectory Length, Total Length of Trajectory, STDEV of Slope, STDEV of Slope to Slope Difference, Number of Curvatures, Curvature of Trajectory, Number of Changes in Horizontal Position and Number of Changes in Vertical Position. This system uses three separate classifiers: SVM, K-Nearest Neighbor and Naive Bayes to recognize the user. The system is trained and tested using a benchmark data. The experimental result shows that K-nearest Neighbor has the lowest error rate.

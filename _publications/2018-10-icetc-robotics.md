@@ -12,3 +12,6 @@ tags:
   - ai-education
   - robotics
 ---
+
+## ABSTRACT
+The purpose of this paper is to present a project that provides a framework to build educational robotics kit with low cost components and interface the kit with a visual programming language. A robotics kit is inaccessible to many third world schools due to its high cost. This paper provides a "Do It Yourself" (DIY) approach to produce graphically programmable robots with low cost components. The framework consists of the low-cost hardware components, back-end software and the visual programming editor to interface the hardware. The editor consists of interlocking graphical blocks to represent programming concepts such as Variables, Logical expressions, Conditions, Loops, Lists, Event Listeners, Parallel Programming and many more. Using this editor a student can graphically reprogram the robotics kit firmware and manipulate it. It allows young adults to apply programming concepts without having to worry about the syntax and makes programming easy and fun.

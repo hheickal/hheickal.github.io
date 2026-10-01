@@ -13,3 +13,6 @@ tags:
   - llm
   - hci
 ---
+
+## ABSTRACT
+Large Language Models (LLMs) are increasingly being adopted for educational applications, but sometimes, limited internet access and budget constraints restrict their accessibility. Small Language Models (SLMs) have emerged as viable alternatives, capable of providing effective tutoring in resource-constrained contexts. This paper introduces PACE (Python AI Companion for Enhanced Engagement), a system leveraging SLMs to deliver step-by-step guidance and adaptive feedback for teaching Python. An evaluation with varying levels of learners showed PACE’s effectiveness, achieving a System Usability Scale (SUS) score of 77.28. While participants were generally satisfied with its clarity and personalized feedback, they identified some areas for improvement, such as loss of context during lengthy conversations. This study examines (1) the PACE system’s effectiveness in programming education according to learners, (2) learners’ trust in PACE versus traditional resources, and (3) design recommendations to enhance engagement and learning outcomes. PACE contributes to advancing cost-effective, scalable programming education.
