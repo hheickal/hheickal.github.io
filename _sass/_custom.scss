@@ -47,9 +47,9 @@ h1, h2, h3, h4, h5, h6,
   h2 { border-bottom-color: $b-border; }
 }
 
-/* cap the line length without fighting the theme's float layout */
-.page__content,
-.archive > * { max-width: 40em; }
+/* blog keeps a narrow, book-like column; the main site uses the full width */
+body.blog .page__content,
+body.blog .archive > * { max-width: 40em; }
 
 a,
 a:visited { color: $b-accent; text-decoration: none; }
@@ -481,4 +481,10 @@ body.blog .masthead__menu ul.masthead__right {
   text-decoration: underline;
   text-decoration-color: rgba($b-accent, 0.45);
   text-underline-offset: 0.18em;
+}
+
+/* main site: drop the theme's empty right gutter (reserved for a table of
+   contents) so text runs to the same right edge as the "Blog" menu link */
+@include breakpoint($large) {
+  body:not(.blog) .page { padding-right: 0; }
 }
