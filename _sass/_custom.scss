@@ -249,6 +249,7 @@ body.blog .blog-sidebar {
   color: $b-text;
 }
 
+.citation__link + .citation__link { margin-left: 0.4em; }
 .citation__link,
 .citation__link:visited {
   display: inline-block;

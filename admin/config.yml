@@ -121,7 +121,15 @@ collections:
         time_format: false
         hint: "Publications are listed newest first by this date."
       - { name: venue, preview: false, label: Venue, widget: string, hint: "e.g. International Conference on Artificial Intelligence in Education" }
-      - { name: paperurl, preview: false, label: Paper link, widget: string, required: false, hint: "Shown as a PDF / Paper button" }
+      - { name: paperurl, preview: false, label: Paper link, widget: string, required: false, hint: "Publisher / DOI / arXiv page, shown as a Paper button" }
+      - name: pdf
+        preview: false
+        label: PDF copy (optional)
+        widget: file
+        required: false
+        media_folder: /files/papers
+        public_folder: /files/papers
+        hint: "Upload the paper's PDF — shown as a PDF button next to the link, for readers who can't get past the publisher's paywall"
       - { name: citation, preview: false, label: Citation, widget: text, required: false }
       - { name: excerpt, preview: false, label: Short summary, widget: text, required: false, hint: "One or two sentences shown in the publication list" }
       - name: tags

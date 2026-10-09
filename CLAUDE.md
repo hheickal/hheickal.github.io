@@ -29,7 +29,7 @@ Front matter: `title`, `url_slug`, `published` (false = draft, hidden), `date`, 
 - Default post URL `/posts/:year/:month/:title/` (`_config.yml` defaults). Pages: `/year-archive/`, `/tags/`, `/languages/`.
 
 ## Publications (`_publications/`)
-13 papers (CV "Selected Publications" + Google Scholar). Front matter: `title`, `published`, `date`, `venue`, `paperurl`, `citation`, `excerpt`, `tags` (ids from `_data/publications.yml`), body `## ABSTRACT`. List page sorts by date desc with year headings and topic chips/filter.
+13 papers (CV "Selected Publications" + Google Scholar). Front matter: `title`, `published`, `date`, `venue`, `paperurl` (Paper button), `pdf` (optional self-hosted copy in `files/papers/`, PDF button), `citation`, `excerpt`, `tags` (ids from `_data/publications.yml`), body `## ABSTRACT`. List page sorts by date desc with year headings and topic chips/filter.
 
 ## Online editor — https://hheickal.github.io/admin/
 Sveltia CMS, config `admin/config.yml`, preview style `admin/preview.css`. Sign in with a fine-grained GitHub token (this repo, Contents RW). Sections: Blog posts, Publications, Teaching, Pages (About, CV PDF), Settings (blog languages & topics, publication topics). `last_modified_at` auto-stamps on save; settings fields hidden from preview.
