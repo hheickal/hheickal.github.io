@@ -26,6 +26,7 @@ Personal academic site + blog for Hasnain Heickal. Jekyll (academicpages / Minim
 Front matter: `title`, `url_slug`, `published` (false = draft, hidden), `date`, `last_modified_at`, `categories` = language id, `tags` = topic ids, `permalink`.
 - Languages/topics and short sidebar labels in `_data/blog.yml`, keyed by **permanent ids** (renaming a name/short label updates everywhere; never change an id). New ids from the editor are random uuids.
 - `.github/workflows/blog-first-publish.yml` (+ `.github/scripts/set_publish_date.py`): when a post is `published: true` with no `permalink`, sets `date` = today (America/New_York) and locks `permalink: /posts/YYYY/MM/<url_slug>/`. Posts with a permalink are never touched.
+- Comments: giscus (GitHub Discussions, "Announcements" category; commenters need GitHub). Embed in `_includes/comments.html` (`custom` provider), ids under `comments.giscus` in `_config.yml`; on for posts only (teaching/publications defaults `comments: false`). Thread = page path, so never change a published post's permalink. Cusdis was considered — deprecated.
 - Default post URL `/posts/:year/:month/:title/` (`_config.yml` defaults). Pages: `/year-archive/`, `/tags/`, `/languages/`.
 
 ## Publications (`_publications/`)

@@ -76,6 +76,24 @@
       {% endif %}
     </section>
   {% when "custom" %}
-    <section id="comments"></section>
+    {% assign giscus = site.comments.giscus %}
+    <h4 class="page__comments-title">{{ comments_label }}</h4>
+    <section id="comments">
+      <script src="https://giscus.app/client.js"
+        data-repo="{{ site.repository }}"
+        data-repo-id="{{ giscus.repo_id }}"
+        data-category="{{ giscus.category }}"
+        data-category-id="{{ giscus.category_id }}"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async></script>
+    </section>
   {% endcase %}
 </div>
