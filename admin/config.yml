@@ -13,6 +13,10 @@ backend:
     uploadMedia: "Blog: upload {{path}}"
     deleteMedia: "Blog: delete {{path}}"
 
+# Don't write empty optional fields (an empty `permalink: ''` sends a page to the site root).
+output:
+  omit_empty_optional_fields: true
+
 site_url: https://hheickal.github.io
 display_url: https://hheickal.github.io
 

@@ -5,7 +5,6 @@ venue: Department of Computer Science, University of Massachusetts Amherst
 location: Amherst, Massachusetts, USA
 date: 2025-09-01
 collection: teaching
-permalink: ''
 ---
 
 I have worked as a Teaching Associate in CS, UMass Amherst in Fall, 2025. 

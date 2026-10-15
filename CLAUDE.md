@@ -39,6 +39,7 @@ Sveltia CMS, config `admin/config.yml`, preview style `admin/preview.css`. Sign 
 - Menu items are `white-space: nowrap`; anything rendered inside the menu (e.g. the search dropdown) needs `white-space: normal`.
 - Titles use `overflow-wrap: anywhere` — a long unbroken word (e.g. "Programming/Programming") otherwise makes phone pages wider than the screen.
 - `git add` of a path already staged for deletion (`git rm`) fails the whole add, so the commit silently doesn't happen — check `git status` before committing.
+- Empty `permalink: ''` in front matter makes Jekyll write the page to `/index.html`, silently replacing About. Editor now has `output.omit_empty_optional_fields: true` to prevent it.
 - Liquid can't do nested lookups like `a[b[0]]` — assign to a variable first.
 - `_config.yml` `author.linkedin` must be the handle only (template prepends the URL).
 - Theme `.greedy-nav` collapse script measures `.visible-links`; keep right-aligned items outside `.greedy-nav`.
